@@ -1,0 +1,7 @@
+[package]
+name = "template"
+edition = "2024.beta"
+
+[addresses]
+template = "0x0"
+
