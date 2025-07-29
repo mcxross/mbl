@@ -18,6 +18,16 @@ package xyz.mcxross.mbl.model
 data class AccountAddress(
     val data: ByteArray
 ) {
+
+    override fun toString(): String {
+        return buildString {
+            append("0x")
+            data.forEach { byte ->
+                append(byte.toInt().and(0xFF).toString(16).padStart(2, '0'))
+            }
+        }
+    }
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || this::class != other::class) return false
